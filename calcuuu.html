@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>caculator using front-end</title>
+<meta charset="UTF-8">
+<style>
+  button:hover{
+    background-color: goldenrod;
+  }
+  p{
+    font-size:x-large;
+  }
+</style>
+</head>
+<body style="background-color: cornflowerblue;">
+
+<h1><center>Simple Calculator &#128151</center></h1>
+<p style="font-size:x-large"><center>you can use this calculator to find the addition,subtraction,multiplication or division of two numbers</center></p>
+<b><center><p style="font-size: 25px;" id="exp">0</p></center></b>
+<div id="numbers"><center></centre><button id="bt0" onclick="GFG_click(this.innerHTML)">0</button> 
+<button id="bt1" onclick="GFG_click(this.innerHTML)">1</button>
+<button id="bt2" onclick="GFG_click(this.innerHTML)">2</button>
+<br>
+<button id="bt3" onclick="GFG_click(this.innerHTML)">3</button>
+<button id="bt4" onclick="GFG_click(this.innerHTML)">4</button>
+<button id="bt5" onclick="GFG_click(this.innerHTML)">5</button>
+<br>
+<button id="bt6" onclick="GFG_click(this.innerHTML)">6</button>
+<button id="bt7" onclick="GFG_click(this.innerHTML)">7</button>
+<button id="bt8" onclick="GFG_click(this.innerHTML)">8</button>
+<br>
+<button id="bt9" onclick="GFG_click(this.innerHTML)">9</button>
+</center></div>
+<br>
+<div><center>
+  <button onclick="op_click(this.innerHTML)">+</button>
+  <button onclick="op_click(this.innerHTML)">-</button>
+  <button onclick="op_click(this.innerHTML)">x</button>
+  <button onclick="op_click(this.innerHTML)">/</button>
+  <p> </p>
+  <button onclick="final()" style="border-color:black;border-width:4px;">caculate</button>
+  <button onclick="rreset()" style="border-color:black;border-width:4px;">reset</button>
+</center></div>
+<center><p>my first website &#128525<br> Lahari Kolathur</p>
+
+</center>
+<script>
+  var a=0;
+  var b=0;
+  var op;
+  var operator;
+  function GFG_click(clicked) {
+                if(op!=1)
+                a=a*10+parseFloat(clicked);
+                document.getElementById("exp").innerHTML=a;
+                if(op==1){
+                b=b*10+parseFloat(clicked);
+                document.getElementById("exp").innerHTML=a+operator+b;
+                }
+            }
+ function op_click(clicked) {
+                op=1;
+                operator=clicked;
+                document.getElementById("exp").innerHTML=a+operator;
+ } 
+ function final() {
+      if(operator=='+'){
+        a=a+b;
+      }
+      if(operator=='-'){
+        a=a-b;
+      }
+      if(operator=='x'){
+        a=a*b;
+      }
+      if(operator=='/'){
+        a=a/b;
+      }
+      document.getElementById("exp").innerHTML=a;
+      a=0;
+      b=0;
+      op=0;
+ }
+ function rreset(){
+   a=0;
+   b=0;
+   op=0;
+   document.getElementById("exp").innerHTML=a;
+ }
+</script>
+</body> 
+</html>
